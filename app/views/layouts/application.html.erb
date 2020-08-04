@@ -16,10 +16,6 @@
       <li class="">
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
-      <li class="">
-        <!-- ↓以下のコードは、5章で正しいroutingに書き直します。 -->
-        <%= link_to 'マイページ', "#" %>
-      </li>
     <% else %>
       <li class="">
         <%= link_to "新規登録", new_user_registration_path %>

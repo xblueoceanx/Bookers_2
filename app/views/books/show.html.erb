@@ -8,3 +8,8 @@
 <strong>Opinion</strong>
 <%= @book.body %></p>
 <%= link_to "Edit", edit_book_path(@book) %>
+<% if @book.user == current_user %>
+    <%= link_to "削除", book_path(@book), method: :delete %>
+<% end %>
+
+<%= render 'books/new', book: @book %>

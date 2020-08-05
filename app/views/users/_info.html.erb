@@ -1,0 +1,8 @@
+<h2>User info</h2>
+<h4>name</h4>
+<%= user.name %>
+<h4>introduction</h4>
+
+<% if user.id == current_user.id %>
+    <p><%= link_to "Update User", edit_user_path(user) %></p>
+<% end %>

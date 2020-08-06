@@ -5,9 +5,8 @@
     <%= f.text_field :name, autofocus: true%>
   </div>
   <div>
-   <%= attachment_image_tag @user, :profile_image, :fill, 60, 60 %>
     <label>Image</label>
-     <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+     <%= f.attachment_field :profile_image %>
   </div>
   <div>
     <label>Introduction</label>
@@ -15,4 +14,3 @@
   </div>
   <%= f.submit "Update User"%>
 <% end %>
-

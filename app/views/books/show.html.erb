@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <p><font><%= flash[:notice] %></font></p>
+<% end %>
+
 <h1>Book detail</h1>
 
 <p>
@@ -9,7 +13,7 @@
 <%= @book.body %></p>
 <% if @book.user == current_user %>
     <%= link_to "Edit", edit_book_path(@book) %>
-    <%= link_to "削除", book_path(@book), method: :delete %>
+    <%= link_to "削除", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
 <% end %>
 
 <%= render 'users/info', user: @book.user %>

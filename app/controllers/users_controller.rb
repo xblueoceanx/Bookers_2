@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @books = Book.all
     @book = Book.new
     @users = User.all
-    @user = User.find(current_user.id)
+    #@user = User.find(current_user.id)
   end
 
   def show
@@ -18,6 +18,10 @@ class UsersController < ApplicationController
 
   def edit
   	@user = User.find(params[:id])
+    if @user == current_user
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def info

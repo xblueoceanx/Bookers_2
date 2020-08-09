@@ -2,10 +2,17 @@
 <div>
  <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
 </div>
-<h4>name</h4>
-<%= user.name %>
-<h4>introduction</h4>
-<%= user.introduction %>
+
+<table class="table" width="600" cellspacing="0" cellpadding="5">
+<tr>
+<th><font size=3px>name</font></th>
+<th width="300"><font size=3px><%= user.name %></font></th>
+</tr>
+<tr>
+<th><font size=3px>introduction</font></th>
+<th width="300"><font size=3px><%= user.introduction %></font></th>
+</tr>
+</table>
 
 
 <p>

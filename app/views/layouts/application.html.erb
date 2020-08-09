@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+       <nav class="nav navbar-nav navbar-left">
+        <span class="bookers-title">Bookers</span>
+       </nav>
+
     <div id="slidemenu">
      <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
     <% if user_signed_in? %>
@@ -39,8 +45,20 @@
         <%= link_to "login", new_user_session_path, class: "glyphicon glyphicon-log-out" %>
       </li>
     <% end %>
-  </ul>
-</div>
+     </ul>
+    </div>
+     
+      
+     </div>
+    </header>
+    <%= render 'layouts/notifications' %>
     <%= yield %>
+    <footer>
+      <div class="container">
+        <div class="col-xs-3 col-xs-offset-9">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -37,6 +37,9 @@
 </td>
 <td align="left" width="200"><%= link_to book.title, book_path(book) %></td>
 <td valign="top" width="400"><%= book.body %></td>
+<!-- コメント機能 -->
+<td valign="top" width="400"><%= link_to "#{book.book_comments.count} コメント", book_path(book.id) %></td>
+<!-- コメント機能 -->
 </tr>
 
 <% end %>

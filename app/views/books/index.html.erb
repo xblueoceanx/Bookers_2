@@ -37,6 +37,13 @@
 </td>
 <td align="left" width="200"><%= link_to book.title, book_path(book) %></td>
 <td valign="top" width="400"><%= book.body %></td>
+<!-- いいね機能 -->
+<td valign="top" width="400">
+<%= link_to book_path(book.id) do %>
+  <span class="glyphicon glyphicon-heart" aria-hidden="true"><%=  "#{book.favorites.count} " %></span>
+<% end %>
+</td>
+<!-- いいね機能 -->
 <!-- コメント機能 -->
 <td valign="top" width="400"><%= link_to "#{book.book_comments.count} コメント", book_path(book.id) %></td>
 <!-- コメント機能 -->

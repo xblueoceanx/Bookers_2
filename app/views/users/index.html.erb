@@ -20,13 +20,19 @@
 <tr>
 <td align="left" width="200"><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
 <td valign="top" width="400"><%= user.name %></td>
+<td valign="top" width="25">
+<% if current_user.following?(user) %>
+   <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
+<% else %>
+   <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
+<% end %>
+</td>
 <td valign="top" width="25"><%= link_to "Show", user_path(user) %></td>
 </tr>
 
 <% end %>
 
 </table>
-
 
 
 </div>

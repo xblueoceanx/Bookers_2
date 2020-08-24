@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   	resource :favorites, only: [:create, :destroy]
   	resources :book_comments, only: [:create, :destroy]
   end
-  resources :users, only: [:show, :edit, :update, :index]
+  resources :users, only: [:show, :edit, :update, :index] do
+    resource :relationships, only: [:create, :destroy]
+    get 'follows' => 'relationships#follower', as: 'follows'
+    get 'followers' => 'relationships#followed', as: 'followers'
+  end
   root "home#top"
-  post 'follow/:id' => 'relationships#follow', as: 'follow' # フォローする
-  post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # フォロー外す
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
